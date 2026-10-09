@@ -1,0 +1,339 @@
+{
+  "validation": {
+    "rows": 11790,
+    "positive_rate": 0.23002544529262087,
+    "roc_auc": 0.8589494944177665,
+    "pr_auc": 0.695174792364403,
+    "brier": null,
+    "log_ratio_mae": 0.23998170266453475,
+    "model_ndcg_at_5_pos": 0.7600511239255311,
+    "model_ndcg_at_10_pos": 0.8237106185471356,
+    "queries": 1360,
+    "queries_with_positive": 848,
+    "model_precision_at_5": 0.30867647058823533,
+    "model_ndcg_at_5": 0.47391423021239,
+    "model_recall_at_5": 0.8230472259658579,
+    "model_hit_rate_at_5": 0.9681603773584906,
+    "model_map_at_5": 0.6780876572327044,
+    "model_map": 0.7352002393921405,
+    "model_mrr": 0.7858078766097633,
+    "baseline_precision_at_5": null,
+    "baseline_ndcg_at_5": null,
+    "basis_range": [
+      "2019-01",
+      "2021-01"
+    ]
+  },
+  "test": {
+    "rows": 23586,
+    "positive_rate": 0.2579496311371152,
+    "roc_auc": 0.771500914594451,
+    "pr_auc": 0.5443368660832846,
+    "brier": null,
+    "log_ratio_mae": 0.360859633788484,
+    "model_ndcg_at_5_pos": 0.7472114442160305,
+    "model_ndcg_at_10_pos": 0.8222487582043724,
+    "queries": 2720,
+    "queries_with_positive": 1701,
+    "model_precision_at_5": 0.33014705882352935,
+    "model_ndcg_at_5": 0.4672818627248044,
+    "model_recall_at_5": 0.7754724111866969,
+    "model_hit_rate_at_5": 0.9535567313345091,
+    "model_map_at_5": 0.6674898752367888,
+    "model_map": 0.7323159595995953,
+    "model_mrr": 0.7895579631029366,
+    "baseline_precision_at_5": null,
+    "baseline_ndcg_at_5": null,
+    "basis_range": [
+      "2022-01",
+      "2025-09"
+    ]
+  },
+  "split_counts": {
+    "train": 445990,
+    "validation": 11790,
+    "test": 23586
+  },
+  "features": [
+    "ts_min_exp",
+    "ts_min_seas",
+    "ts_rise_in",
+    "horizon",
+    "ts_exp_base_in",
+    "ts_seas_delta_out",
+    "ts_mom12_in",
+    "event_count",
+    "ts_seas_delta_in",
+    "ts_slope_long_in",
+    "ts_since_max_in",
+    "ts_slope_long_out",
+    "ts_height_out",
+    "ts_slope6_in",
+    "ts_height_in",
+    "ts_slope12_out",
+    "ts_last_dev_out",
+    "ts_trend_h_out",
+    "ts_dev24_in",
+    "ts_dev48_out",
+    "ts_dev24_out",
+    "ts_snaive_mean_in",
+    "export_yoy",
+    "ts_snaive_first_out",
+    "ts_last_dev_in",
+    "ts_snaive_first_in",
+    "ts_since_min_out",
+    "ts_slope3_in",
+    "coverage",
+    "months_since_change",
+    "change_magnitude",
+    "ts_vol_in",
+    "import_growth",
+    "ts_snaive_n_out",
+    "ts_slope12_in",
+    "ts_slope3_out",
+    "ts_exp_base_out",
+    "rel_dev48_in",
+    "inflow_level_z",
+    "ts_rise_out",
+    "ts_drop_out",
+    "ts_mom6_out",
+    "ts_pos_out",
+    "ts_ev_gain_in",
+    "ts_dev12_out",
+    "rel_height_in",
+    "ts_run_up_out",
+    "ts_trend_h_in",
+    "ts_lead_gap",
+    "rel_lead_gap",
+    "rel_dev12_out",
+    "ts_run_dn_out",
+    "export_growth",
+    "ts_run_up_in",
+    "hs_chapter",
+    "ts_accel_out",
+    "rel_slope6_in",
+    "ts_mom3_out",
+    "import_yoy",
+    "ts_pos_in",
+    "geographic_adjacency",
+    "ts_miss12_out",
+    "rel_snaive_mean_in",
+    "mirror_gap_level",
+    "coupled_growth",
+    "ts_ncur_in",
+    "ts_drop_in",
+    "ts_run_dn_in",
+    "absorption_gap",
+    "ts_mom_gap3",
+    "rel_exp_base_in",
+    "ts_miss12_in",
+    "ts_vol_out",
+    "months_since_event",
+    "rel_pos_out",
+    "rel_exp_base_out",
+    "rel_height_out",
+    "ts_ncur_out",
+    "change_point_detected",
+    "export_volatility"
+  ],
+  "feature_importance": null,
+  "task": "future 3-month-average import >15% and outbound >20% growth vs latest available 3-month average; not official designation labels",
+  "evaluation_scope": "generated observation-calibrated panel; ranking of future coupled trade growth, not real-world evasion accuracy",
+  "leakage_controls": [
+    "features use available_month <= basis (60-month as-of history; checked by removing later rows)",
+    "labels mature after horizon+2+5 months",
+    "train label maturity <= 2018-12; validation basis >= 2019-01; test basis >= 2022-01",
+    "country names and HS6 identifiers excluded; hs_chapter is a candidate feature",
+    "features, learner and settings chosen on three rolling-origin folds inside the training period and on validation; the test split was read once, after the configuration was frozen",
+    "peer deviations use the other candidates of the same basis month only; see artifacts/model-benchmark-v14/"
+  ],
+  "model_selection": {
+    "chosen": "density_xgb_clf_step2",
+    "feature_set": "v2f",
+    "version": "xgb-v2f-v3-calibrated-17items",
+    "note": "benchmark v14: feature set v2 and tuned XGBoost, selected on inner folds and validation (selection.json); test read once (final-evaluation.json)",
+    "benchmark": "artifacts/model-benchmark-v14/selection.json",
+    "members": [
+      {
+        "family": "xgb_clf",
+        "params": {
+          "max_depth": 5,
+          "learning_rate": 0.04824582412163615,
+          "n_estimators": 800,
+          "min_child_weight": 1.3196262418422195,
+          "subsample": 0.8333833577228338,
+          "colsample_bytree": 0.7694465087327116,
+          "reg_lambda": 0.33200384521235843,
+          "gamma": 0.6446314882742665
+        },
+        "seed": 42,
+        "weight": 1.0
+      }
+    ],
+    "previous_version": "xgb-ranker-25f-v3-calibrated-17items"
+  },
+  "per_target": {
+    "RUS": {
+      "validation": {
+        "model_ndcg_at_5": 0.4356560523649022,
+        "model_ndcg_at_5_pos": 0.7369306358411283
+      },
+      "test": {
+        "model_ndcg_at_5": 0.5709631512575024,
+        "model_ndcg_at_5_pos": 0.7583104352638703
+      }
+    },
+    "IRN": {
+      "validation": {
+        "model_ndcg_at_5": 0.6286578277496487,
+        "model_ndcg_at_5_pos": 0.7858222846870608
+      },
+      "test": {
+        "model_ndcg_at_5": 0.3552145482201917,
+        "model_ndcg_at_5_pos": 0.6940973930739377
+      }
+    },
+    "PRK": {
+      "validation": {
+        "model_ndcg_at_5": 0.3346424177309993,
+        "model_ndcg_at_5_pos": 0.6854121808948178
+      },
+      "test": {
+        "model_ndcg_at_5": 0.23625164756286163,
+        "model_ndcg_at_5_pos": 0.6108407617594902
+      }
+    },
+    "CHN": {
+      "validation": {
+        "model_ndcg_at_5": 0.49670062300400974,
+        "model_ndcg_at_5_pos": 0.8080297216333173
+      },
+      "test": {
+        "model_ndcg_at_5": 0.7066981038586617,
+        "model_ndcg_at_5_pos": 0.8314095339513667
+      }
+    }
+  },
+  "per_horizon": {
+    "3": {
+      "validation": {
+        "model_ndcg_at_5_pos": 0.7987116784199142
+      },
+      "test": {
+        "model_ndcg_at_5_pos": 0.7412502248265291
+      }
+    },
+    "6": {
+      "validation": {
+        "model_ndcg_at_5_pos": 0.7289827225865174
+      },
+      "test": {
+        "model_ndcg_at_5_pos": 0.7254467802610678
+      }
+    },
+    "12": {
+      "validation": {
+        "model_ndcg_at_5_pos": 0.7501097890866267
+      },
+      "test": {
+        "model_ndcg_at_5_pos": 0.7631337282454983
+      }
+    },
+    "24": {
+      "validation": {
+        "model_ndcg_at_5_pos": 0.7762377449638734
+      },
+      "test": {
+        "model_ndcg_at_5_pos": 0.7716440707602705
+      }
+    }
+  },
+  "production_training_rows": 610067,
+  "previous_model_same_protocol": {
+    "version": "xgb-ranker-25f-v3-calibrated-17items",
+    "note": "the previously deployed configuration refitted and scored by the same code on the same splits",
+    "validation": {
+      "rows": 11790,
+      "positive_rate": 0.23002544529262087,
+      "roc_auc": 0.6881267583597027,
+      "pr_auc": 0.45399708900571734,
+      "brier": null,
+      "log_ratio_mae": 0.27177517641974397,
+      "model_ndcg_at_5_pos": 0.6996073625790735,
+      "model_ndcg_at_10_pos": 0.7875615400709969,
+      "queries": 1360,
+      "queries_with_positive": 848,
+      "model_precision_at_5": 0.29029411764705887,
+      "model_ndcg_at_5": 0.436225767255187,
+      "model_recall_at_5": 0.767850123539982,
+      "model_hit_rate_at_5": 0.9422169811320755,
+      "model_map_at_5": 0.6081692216981132,
+      "model_map": 0.6832929371630727,
+      "model_mrr": 0.7420218441150045,
+      "baseline_precision_at_5": null,
+      "baseline_ndcg_at_5": null,
+      "basis_range": null
+    },
+    "test": {
+      "rows": 23586,
+      "positive_rate": 0.2579496311371152,
+      "roc_auc": 0.6270256114620055,
+      "pr_auc": 0.4040650221558844,
+      "brier": null,
+      "log_ratio_mae": 0.3585437913498085,
+      "model_ndcg_at_5_pos": 0.7209504242603479,
+      "model_ndcg_at_10_pos": 0.8060733770821611,
+      "queries": 2720,
+      "queries_with_positive": 1701,
+      "model_precision_at_5": 0.32191176470588234,
+      "model_ndcg_at_5": 0.45085907046575435,
+      "model_recall_at_5": 0.7538716721256404,
+      "model_hit_rate_at_5": 0.9441504997060552,
+      "model_map_at_5": 0.6346691488666798,
+      "model_map": 0.7081672012328349,
+      "model_mrr": 0.7702581581329377,
+      "baseline_precision_at_5": null,
+      "baseline_ndcg_at_5": null,
+      "basis_range": null
+    }
+  },
+  "random_order_reference": {
+    "validation": {
+      "model_ndcg_at_5_pos": 0.49227154430056363,
+      "model_ndcg_at_5": 0.30694578644623377
+    },
+    "test": {
+      "model_ndcg_at_5_pos": 0.539842717236065,
+      "model_ndcg_at_5": 0.33760016985975977
+    }
+  },
+  "supplementary_test_protocols": {
+    "refit_train_plus_validation": {
+      "fit": "every row with label maturity <= 2021-12",
+      "model_ndcg_at_5_pos": 0.7564444245449816,
+      "model_ndcg_at_5": 0.4730558699084608,
+      "previous_model_ndcg_at_5_pos": 0.7302681822959821
+    },
+    "walk_forward_yearly": {
+      "fit": "refit at the start of each test year on every label matured by then",
+      "model_ndcg_at_5_pos": 0.7686266748035446,
+      "model_ndcg_at_5": 0.4806742550885401,
+      "previous_model_ndcg_at_5_pos": 0.7273852200142207
+    }
+  },
+  "primary_metric": {
+    "name": "NDCG@5 over queries with at least one positive",
+    "key": "model_ndcg_at_5_pos",
+    "target": 0.85,
+    "target_status": "not_achieved",
+    "actual_validation": 0.7600511239255311,
+    "actual_test": 0.7472114442160305,
+    "previous_validation": 0.6996073625790735,
+    "previous_test": 0.7209504242603479,
+    "why_not_all_queries": "a query without a positive scores 0 whatever the order, so the all-query mean (model_ndcg_at_5) cannot exceed the share of queries with a positive: 0.6235 on validation, 0.6254 on test",
+    "ceiling": "artifacts/model-benchmark-v14/ceiling.json",
+    "scope": "generated observation-calibrated panel; ranking of future coupled trade growth, not real-world evasion accuracy"
+  },
+  "deployed_at_utc": "2026-10-04T16:35:18.861228+00:00",
+  "deployed_by": "benchmark export + scripts/deploy_ranker.py"
+}

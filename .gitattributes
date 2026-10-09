@@ -1,0 +1,19 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.joblib binary
+*.db binary
+
+# Preserve the bundled third-party DOM library as supplied.
+tests/linkedom.mjs -whitespace
+*.sqlite binary
+*.pdf binary
+*.ttf binary
+# arms layer source copies are kept byte-for-byte (manifests record their sha256; the DB version is a hash of these files)
+data/arms/** -text

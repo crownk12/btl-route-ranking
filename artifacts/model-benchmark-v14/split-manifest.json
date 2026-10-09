@@ -1,0 +1,167 @@
+{
+ "schema_version": "btl-v14-benchmark-split-v1",
+ "built_at_utc": "2026-10-04T13:06:21.402846+00:00",
+ "panel": {
+  "dataset_version": "btl-test-3-calibrated",
+  "built_at": "2026-09-20",
+  "parameters_sha256": "f317df449492a4a7c00686b550db78cb4e43f79ea66efdb3ee09d8750d6f0660",
+  "panel_end": "2026-09"
+ },
+ "query_definition": "target x hs6 x basis_month x horizon; documents are the candidate transit countries",
+ "sampling": "training bases every 1 month(s) from index 60; validation, test and the inner holdout only on the v12/v13 grid (every 4 months from index 60); horizons 3/6/12/24/60/75",
+ "label": "future 3-month-average import ratio > 1.15 AND export ratio > 1.20 vs latest available 3-month average (unchanged v3 contract)",
+ "split_rule": {
+  "train": "label maturity (basis+horizon+7) <= 2018-12",
+  "validation": "grid basis >= 2019-01 and maturity <= 2021-12",
+  "test": "grid basis >= 2022-01 and maturity <= panel end",
+  "inner_fit": "train with maturity <= 2015-12",
+  "inner_holdout": "train on the grid with basis >= 2016-01 (model, feature and hyperparameter search)"
+ },
+ "features": 125,
+ "splits": {
+  "train": {
+   "rows": 889543,
+   "queries": 102408,
+   "queries_with_positive": 75736,
+   "positives": 283398,
+   "positive_rate": 0.3186,
+   "basis_range": [
+    "1995-01",
+    "2018-02"
+   ],
+   "rows_by_target": {
+    "RUS": 226642,
+    "IRN": 230407,
+    "PRK": 227788,
+    "CHN": 204706
+   },
+   "rows_by_horizon": {
+    "3": 164217,
+    "6": 162440,
+    "12": 158885,
+    "24": 151804,
+    "60": 130529,
+    "75": 121668
+   },
+   "query_ids_sha256": "4542baee40bc06be0dfab0c9fef421a9a9bcb72ad0eb2df736ec86175d7da2e8"
+  },
+  "validation": {
+   "rows": 11790,
+   "queries": 1360,
+   "queries_with_positive": 848,
+   "positives": 2712,
+   "positive_rate": 0.23,
+   "basis_range": [
+    "2019-01",
+    "2021-01"
+   ],
+   "rows_by_target": {
+    "RUS": 3002,
+    "IRN": 3060,
+    "PRK": 3008,
+    "CHN": 2720
+   },
+   "rows_by_horizon": {
+    "3": 4123,
+    "6": 3541,
+    "12": 2948,
+    "24": 1178,
+    "60": 0,
+    "75": 0
+   },
+   "query_ids_sha256": "d67062235a56a01c084a6c9e51946149a79ef0e034cd6757ff113b5a5b2eca03"
+  },
+  "test": {
+   "rows": 23586,
+   "queries": 2720,
+   "queries_with_positive": 1701,
+   "positives": 6084,
+   "positive_rate": 0.2579,
+   "basis_range": [
+    "2022-01",
+    "2025-09"
+   ],
+   "rows_by_target": {
+    "RUS": 6010,
+    "IRN": 6116,
+    "PRK": 6023,
+    "CHN": 5437
+   },
+   "rows_by_horizon": {
+    "3": 7068,
+    "6": 6490,
+    "12": 5900,
+    "24": 4128,
+    "60": 0,
+    "75": 0
+   },
+   "query_ids_sha256": "03c1959c329f1a7b3a18f4d6bd2543bba3cee48a8223a7d8f7acdb8892390491"
+  },
+  "inner_fit": {
+   "rows": 761950,
+   "queries": 87720,
+   "queries_with_positive": 64244,
+   "positives": 232427,
+   "positive_rate": 0.305,
+   "basis_range": [
+    "1995-01",
+    "2015-02"
+   ],
+   "rows_by_target": {
+    "RUS": 194111,
+    "IRN": 197359,
+    "PRK": 195148,
+    "CHN": 175332
+   },
+   "rows_by_horizon": {
+    "3": 142951,
+    "6": 141179,
+    "12": 137628,
+    "24": 130541,
+    "60": 109261,
+    "75": 100390
+   },
+   "query_ids_sha256": "5893b3e07042c6daba31e61f9d6d8f4c1710eb61407bd329b967222e5a72b406"
+  },
+  "inner_holdout": {
+   "rows": 11812,
+   "queries": 1360,
+   "queries_with_positive": 870,
+   "positives": 2729,
+   "positive_rate": 0.231,
+   "basis_range": [
+    "2016-01",
+    "2018-01"
+   ],
+   "rows_by_target": {
+    "RUS": 3012,
+    "IRN": 3060,
+    "PRK": 3020,
+    "CHN": 2720
+   },
+   "rows_by_horizon": {
+    "3": 4136,
+    "6": 3549,
+    "12": 2951,
+    "24": 1176,
+    "60": 0,
+    "75": 0
+   },
+   "query_ids_sha256": "248a8eaf9f849ca1ecf08ded4d22d639b6e19a576ed94a36ad086d511d92fdeb"
+  }
+ },
+ "extraction_seconds": 270.4,
+ "query_overlap": {
+  "train_validation": 0,
+  "train_test": 0,
+  "validation_test": 0
+ },
+ "time_order": {
+  "max_train_maturity": "2018-12",
+  "min_validation_basis": "2019-01",
+  "max_validation_maturity": "2021-12",
+  "min_test_basis": "2022-01",
+  "max_inner_fit_maturity": "2015-12",
+  "min_inner_holdout_basis": "2016-01"
+ }
+}

@@ -1,0 +1,910 @@
+{
+ "generated_at_utc": "2026-10-04T14:52:58.839242+00:00",
+ "rule": "sizes within 0.002 of the best inner-fold ndcg_at_5_pos are tied; the tied size with the best validation ndcg_at_5_pos is chosen; ranking by permutation drop on the inner folds",
+ "first_rule": {
+  "rule": "smallest tied size, validation not consulted",
+  "would_choose": 30,
+  "replaced": "2026-10-04, see the module docstring"
+ },
+ "tied_sizes": [
+  30,
+  45,
+  60,
+  80
+ ],
+ "chosen_size": 80,
+ "features": [
+  "ts_min_exp",
+  "ts_min_seas",
+  "ts_rise_in",
+  "horizon",
+  "ts_exp_base_in",
+  "ts_seas_delta_out",
+  "ts_mom12_in",
+  "event_count",
+  "ts_seas_delta_in",
+  "ts_slope_long_in",
+  "ts_since_max_in",
+  "ts_slope_long_out",
+  "ts_height_out",
+  "ts_slope6_in",
+  "ts_height_in",
+  "ts_slope12_out",
+  "ts_last_dev_out",
+  "ts_trend_h_out",
+  "ts_dev24_in",
+  "ts_dev48_out",
+  "ts_dev24_out",
+  "ts_snaive_mean_in",
+  "export_yoy",
+  "ts_snaive_first_out",
+  "ts_last_dev_in",
+  "ts_snaive_first_in",
+  "ts_since_min_out",
+  "ts_slope3_in",
+  "coverage",
+  "months_since_change",
+  "change_magnitude",
+  "ts_vol_in",
+  "import_growth",
+  "ts_snaive_n_out",
+  "ts_slope12_in",
+  "ts_slope3_out",
+  "ts_exp_base_out",
+  "rel_dev48_in",
+  "inflow_level_z",
+  "ts_rise_out",
+  "ts_drop_out",
+  "ts_mom6_out",
+  "ts_pos_out",
+  "ts_ev_gain_in",
+  "ts_dev12_out",
+  "rel_height_in",
+  "ts_run_up_out",
+  "ts_trend_h_in",
+  "ts_lead_gap",
+  "rel_lead_gap",
+  "rel_dev12_out",
+  "ts_run_dn_out",
+  "export_growth",
+  "ts_run_up_in",
+  "hs_chapter",
+  "ts_accel_out",
+  "rel_slope6_in",
+  "ts_mom3_out",
+  "import_yoy",
+  "ts_pos_in",
+  "geographic_adjacency",
+  "ts_miss12_out",
+  "rel_snaive_mean_in",
+  "mirror_gap_level",
+  "coupled_growth",
+  "ts_ncur_in",
+  "ts_drop_in",
+  "ts_run_dn_in",
+  "absorption_gap",
+  "ts_mom_gap3",
+  "rel_exp_base_in",
+  "ts_miss12_in",
+  "ts_vol_out",
+  "months_since_event",
+  "rel_pos_out",
+  "rel_exp_base_out",
+  "rel_height_out",
+  "ts_ncur_out",
+  "change_point_detected",
+  "export_volatility"
+ ],
+ "groups": {
+  "ts_min_exp": "current_gap",
+  "ts_min_seas": "seasonal",
+  "ts_rise_in": "cycle_state",
+  "horizon": "quality_task",
+  "ts_exp_base_in": "current_gap",
+  "ts_seas_delta_out": "seasonal",
+  "ts_mom12_in": "cycle_state",
+  "event_count": "policy_timing",
+  "ts_seas_delta_in": "seasonal",
+  "ts_slope_long_in": "cycle_state",
+  "ts_since_max_in": "cycle_state",
+  "ts_slope_long_out": "cycle_state",
+  "ts_height_out": "cycle_state",
+  "ts_slope6_in": "cycle_state",
+  "ts_height_in": "cycle_state",
+  "ts_slope12_out": "cycle_state",
+  "ts_last_dev_out": "current_gap",
+  "ts_trend_h_out": "cycle_state",
+  "ts_dev24_in": "current_gap",
+  "ts_dev48_out": "current_gap",
+  "ts_dev24_out": "current_gap",
+  "ts_snaive_mean_in": "seasonal",
+  "export_yoy": "flow",
+  "ts_snaive_first_out": "seasonal",
+  "ts_last_dev_in": "current_gap",
+  "ts_snaive_first_in": "seasonal",
+  "ts_since_min_out": "cycle_state",
+  "ts_slope3_in": "cycle_state",
+  "coverage": "quality_task",
+  "months_since_change": "change_point",
+  "change_magnitude": "change_point",
+  "ts_vol_in": "cycle_state",
+  "import_growth": "flow",
+  "ts_snaive_n_out": "seasonal",
+  "ts_slope12_in": "cycle_state",
+  "ts_slope3_out": "cycle_state",
+  "ts_exp_base_out": "current_gap",
+  "rel_dev48_in": "peer_relative",
+  "inflow_level_z": "absorption",
+  "ts_rise_out": "cycle_state",
+  "ts_drop_out": "cycle_state",
+  "ts_mom6_out": "cycle_state",
+  "ts_pos_out": "cycle_state",
+  "ts_ev_gain_in": "policy_response",
+  "ts_dev12_out": "current_gap",
+  "rel_height_in": "peer_relative",
+  "ts_run_up_out": "cycle_state",
+  "ts_trend_h_in": "cycle_state",
+  "ts_lead_gap": "leg_lead",
+  "rel_lead_gap": "peer_relative",
+  "rel_dev12_out": "peer_relative",
+  "ts_run_dn_out": "cycle_state",
+  "export_growth": "flow",
+  "ts_run_up_in": "cycle_state",
+  "hs_chapter": "item",
+  "ts_accel_out": "cycle_state",
+  "rel_slope6_in": "peer_relative",
+  "ts_mom3_out": "cycle_state",
+  "import_yoy": "flow",
+  "ts_pos_in": "cycle_state",
+  "geographic_adjacency": "graph",
+  "ts_miss12_out": "reporting",
+  "rel_snaive_mean_in": "peer_relative",
+  "mirror_gap_level": "mirror_gap",
+  "coupled_growth": "flow",
+  "ts_ncur_in": "reporting",
+  "ts_drop_in": "cycle_state",
+  "ts_run_dn_in": "cycle_state",
+  "absorption_gap": "absorption",
+  "ts_mom_gap3": "leg_lead",
+  "rel_exp_base_in": "peer_relative",
+  "ts_miss12_in": "reporting",
+  "ts_vol_out": "cycle_state",
+  "months_since_event": "policy_timing",
+  "rel_pos_out": "peer_relative",
+  "rel_exp_base_out": "peer_relative",
+  "rel_height_out": "peer_relative",
+  "ts_ncur_out": "reporting",
+  "change_point_detected": "change_point",
+  "export_volatility": "change_point"
+ },
+ "candidates": {
+  "30": {
+   "cv": 0.8203792418692941,
+   "cv_by_seed": [
+    0.8195669090293536,
+    0.8211915747092347
+   ],
+   "validation": 0.7357716952063937
+  },
+  "45": {
+   "cv": 0.8194845546485561,
+   "cv_by_seed": [
+    0.8210838051336502,
+    0.817885304163462
+   ],
+   "validation": 0.7349745706207882
+  },
+  "60": {
+   "cv": 0.8193010066422721,
+   "cv_by_seed": [
+    0.819593716144666,
+    0.8190082971398783
+   ],
+   "validation": 0.7356163283512933
+  },
+  "80": {
+   "cv": 0.8203941801320573,
+   "cv_by_seed": [
+    0.8211262411953638,
+    0.819662119068751
+   ],
+   "validation": 0.7516988959487783
+  },
+  "113": {
+   "cv": 0.817705081884023,
+   "cv_by_seed": [
+    0.8178524245677119,
+    0.817557739200334
+   ],
+   "validation": 0.7496188336069516
+  }
+ },
+ "permutation_drop": {
+  "ts_min_exp": 0.09131,
+  "ts_min_seas": 0.03073,
+  "ts_rise_in": 0.02463,
+  "horizon": 0.01936,
+  "ts_exp_base_in": 0.0061,
+  "ts_seas_delta_out": 0.00532,
+  "ts_mom12_in": 0.0049,
+  "event_count": 0.00465,
+  "ts_seas_delta_in": 0.00448,
+  "ts_slope_long_in": 0.00392,
+  "ts_since_max_in": 0.00267,
+  "ts_slope_long_out": 0.00257,
+  "ts_height_out": 0.00201,
+  "ts_slope6_in": 0.00188,
+  "ts_height_in": 0.00185,
+  "ts_slope12_out": 0.00168,
+  "ts_last_dev_out": 0.00141,
+  "ts_trend_h_out": 0.00123,
+  "ts_dev24_in": 0.00121,
+  "ts_dev48_out": 0.00118,
+  "ts_dev24_out": 0.00117,
+  "ts_snaive_mean_in": 0.00109,
+  "export_yoy": 0.00104,
+  "ts_snaive_first_out": 0.00101,
+  "ts_last_dev_in": 0.00097,
+  "ts_snaive_first_in": 0.00094,
+  "ts_since_min_out": 0.00091,
+  "ts_slope3_in": 0.00091,
+  "coverage": 0.00085,
+  "months_since_change": 0.00077,
+  "change_magnitude": 0.00075,
+  "ts_vol_in": 0.00075,
+  "import_growth": 0.00068,
+  "ts_snaive_n_out": 0.00065,
+  "ts_slope12_in": 0.00062,
+  "ts_slope3_out": 0.00061,
+  "ts_exp_base_out": 0.00058,
+  "rel_dev48_in": 0.00053,
+  "inflow_level_z": 0.00048,
+  "ts_rise_out": 0.00045,
+  "ts_drop_out": 0.00044,
+  "ts_mom6_out": 0.00043,
+  "ts_pos_out": 0.00042,
+  "ts_ev_gain_in": 0.00039,
+  "ts_dev12_out": 0.00038,
+  "rel_height_in": 0.00036,
+  "ts_run_up_out": 0.00035,
+  "ts_trend_h_in": 0.00035,
+  "ts_lead_gap": 0.00033,
+  "rel_lead_gap": 0.00033,
+  "rel_dev12_out": 0.00033,
+  "ts_run_dn_out": 0.00032,
+  "export_growth": 0.00032,
+  "ts_run_up_in": 0.00032,
+  "hs_chapter": 0.0003,
+  "ts_accel_out": 0.0003,
+  "rel_slope6_in": 0.00026,
+  "ts_mom3_out": 0.00025,
+  "import_yoy": 0.00022,
+  "ts_pos_in": 0.00021,
+  "geographic_adjacency": 0.00019,
+  "ts_miss12_out": 0.00018,
+  "rel_snaive_mean_in": 0.00015,
+  "mirror_gap_level": 0.00011,
+  "coupled_growth": 5e-05,
+  "ts_ncur_in": 5e-05,
+  "ts_drop_in": 2e-05,
+  "ts_run_dn_in": 1e-05,
+  "absorption_gap": 1e-05,
+  "ts_mom_gap3": 0.0,
+  "rel_exp_base_in": 0.0,
+  "ts_miss12_in": -1e-05,
+  "ts_vol_out": -2e-05,
+  "months_since_event": -2e-05,
+  "rel_pos_out": -2e-05,
+  "rel_exp_base_out": -6e-05,
+  "rel_height_out": -6e-05,
+  "ts_ncur_out": -8e-05,
+  "change_point_detected": -9e-05,
+  "export_volatility": -9e-05,
+  "ts_dev12_in": -9e-05,
+  "ts_dev6_in": -0.0001,
+  "ts_slope6_out": -0.00014,
+  "rel_slope6_out": -0.00016,
+  "ts_dev6_out": -0.00019,
+  "similar_item_deviation": -0.00021,
+  "rel_mom3_in": -0.00022,
+  "ts_amp_out": -0.00025,
+  "ts_amp_in": -0.00028,
+  "inflow_outflow_coupling": -0.00028,
+  "reexport_share_trend": -0.0003,
+  "rel_dev48_out": -0.0003,
+  "ts_event_phase_h": -0.0003,
+  "ts_since_max_out": -0.00031,
+  "rel_dev12_in": -0.00031,
+  "ts_since_min_in": -0.00031,
+  "rel_snaive_mean_out": -0.00037,
+  "ts_ev_gain_out": -0.00037,
+  "rel_min_exp": -0.00038,
+  "ts_dev48_in": -0.00039,
+  "ts_mom12_out": -0.0004,
+  "mirror_gap": -0.00046,
+  "ts_snaive_n_in": -0.00048,
+  "mirror_gap_volatility": -0.00051,
+  "neighbor_deviation": -0.00058,
+  "ts_snaive_mean_out": -0.00059,
+  "ts_report_lag": -0.00073,
+  "ts_mom3_in": -0.0008,
+  "rel_pos_in": -0.00091,
+  "import_volatility": -0.00092,
+  "ts_mom6_in": -0.00096,
+  "ts_slope_gap6": -0.00102,
+  "rel_mom3_out": -0.00112,
+  "ts_accel_in": -0.00166
+ },
+ "permutation_drop_by_fold": {
+  "ts_min_exp": [
+   0.0999,
+   0.10405,
+   0.06998
+  ],
+  "ts_min_seas": [
+   0.02836,
+   0.03594,
+   0.0279
+  ],
+  "ts_rise_in": [
+   0.01844,
+   0.02926,
+   0.02617
+  ],
+  "horizon": [
+   0.01992,
+   0.02165,
+   0.01652
+  ],
+  "ts_exp_base_in": [
+   0.00645,
+   0.0042,
+   0.00764
+  ],
+  "ts_seas_delta_out": [
+   0.00887,
+   0.00427,
+   0.00283
+  ],
+  "ts_mom12_in": [
+   0.00379,
+   0.00675,
+   0.00415
+  ],
+  "event_count": [
+   0.0,
+   0.0,
+   0.01396
+  ],
+  "ts_seas_delta_in": [
+   0.00275,
+   0.00322,
+   0.00746
+  ],
+  "ts_slope_long_in": [
+   0.00352,
+   0.0019,
+   0.00634
+  ],
+  "ts_since_max_in": [
+   0.00372,
+   0.0007,
+   0.0036
+  ],
+  "ts_slope_long_out": [
+   0.00252,
+   0.00336,
+   0.00184
+  ],
+  "ts_height_out": [
+   0.00366,
+   -0.00013,
+   0.00251
+  ],
+  "ts_slope6_in": [
+   0.00133,
+   0.00151,
+   0.00282
+  ],
+  "ts_height_in": [
+   0.00361,
+   -0.00015,
+   0.00208
+  ],
+  "ts_slope12_out": [
+   0.00209,
+   0.00215,
+   0.0008
+  ],
+  "ts_last_dev_out": [
+   0.00104,
+   0.00063,
+   0.00255
+  ],
+  "ts_trend_h_out": [
+   0.00188,
+   0.00292,
+   -0.00111
+  ],
+  "ts_dev24_in": [
+   0.00163,
+   0.00163,
+   0.00037
+  ],
+  "ts_dev48_out": [
+   0.00236,
+   0.00232,
+   -0.00113
+  ],
+  "ts_dev24_out": [
+   0.00168,
+   0.00148,
+   0.00035
+  ],
+  "ts_snaive_mean_in": [
+   0.00192,
+   0.00193,
+   -0.00059
+  ],
+  "export_yoy": [
+   0.00165,
+   0.00057,
+   0.00091
+  ],
+  "ts_snaive_first_out": [
+   0.00172,
+   0.0007,
+   0.00061
+  ],
+  "ts_last_dev_in": [
+   0.00128,
+   0.00091,
+   0.00071
+  ],
+  "ts_snaive_first_in": [
+   -6e-05,
+   0.00183,
+   0.00106
+  ],
+  "ts_since_min_out": [
+   0.00261,
+   0.00029,
+   -0.00015
+  ],
+  "ts_slope3_in": [
+   0.0016,
+   0.00107,
+   7e-05
+  ],
+  "coverage": [
+   0.00105,
+   0.00109,
+   0.00041
+  ],
+  "months_since_change": [
+   0.00179,
+   0.00071,
+   -0.0002
+  ],
+  "change_magnitude": [
+   0.00177,
+   -0.00035,
+   0.00081
+  ],
+  "ts_vol_in": [
+   0.00095,
+   0.00063,
+   0.00066
+  ],
+  "import_growth": [
+   0.0001,
+   0.00112,
+   0.00081
+  ],
+  "ts_snaive_n_out": [
+   -0.0006,
+   0.0018,
+   0.00075
+  ],
+  "ts_slope12_in": [
+   0.0006,
+   0.00101,
+   0.00023
+  ],
+  "ts_slope3_out": [
+   0.00182,
+   0.00025,
+   -0.00024
+  ],
+  "ts_exp_base_out": [
+   0.00075,
+   0.00125,
+   -0.00027
+  ],
+  "rel_dev48_in": [
+   0.00083,
+   -0.00117,
+   0.00191
+  ],
+  "inflow_level_z": [
+   0.00047,
+   0.00103,
+   -7e-05
+  ],
+  "ts_rise_out": [
+   -0.00256,
+   0.00259,
+   0.00131
+  ],
+  "ts_drop_out": [
+   3e-05,
+   0.00102,
+   0.00026
+  ],
+  "ts_mom6_out": [
+   0.00128,
+   0.00137,
+   -0.00135
+  ],
+  "ts_pos_out": [
+   0.00114,
+   -0.00138,
+   0.0015
+  ],
+  "ts_ev_gain_in": [
+   0.0,
+   0.0,
+   0.00116
+  ],
+  "ts_dev12_out": [
+   -4e-05,
+   0.00035,
+   0.00082
+  ],
+  "rel_height_in": [
+   0.00144,
+   -0.00036,
+   -1e-05
+  ],
+  "ts_run_up_out": [
+   0.00082,
+   -4e-05,
+   0.00028
+  ],
+  "ts_trend_h_in": [
+   -0.00049,
+   0.0013,
+   0.00024
+  ],
+  "ts_lead_gap": [
+   -0.00035,
+   -0.00021,
+   0.00157
+  ],
+  "rel_lead_gap": [
+   0.00059,
+   0.0,
+   0.00041
+  ],
+  "rel_dev12_out": [
+   0.0011,
+   -0.00079,
+   0.0007
+  ],
+  "ts_run_dn_out": [
+   0.00087,
+   -0.0,
+   0.0001
+  ],
+  "export_growth": [
+   0.00042,
+   0.00105,
+   -0.00051
+  ],
+  "ts_run_up_in": [
+   0.0011,
+   0.0009,
+   -0.00105
+  ],
+  "hs_chapter": [
+   0.00018,
+   0.00028,
+   0.00045
+  ],
+  "ts_accel_out": [
+   0.00121,
+   -0.00016,
+   -0.00015
+  ],
+  "rel_slope6_in": [
+   0.00085,
+   -0.00034,
+   0.00027
+  ],
+  "ts_mom3_out": [
+   0.00132,
+   -0.0005,
+   -8e-05
+  ],
+  "import_yoy": [
+   0.00172,
+   0.00023,
+   -0.00128
+  ],
+  "ts_pos_in": [
+   -0.00039,
+   0.00075,
+   0.00027
+  ],
+  "geographic_adjacency": [
+   0.00052,
+   6e-05,
+   -3e-05
+  ],
+  "ts_miss12_out": [
+   0.00011,
+   0.00052,
+   -9e-05
+  ],
+  "rel_snaive_mean_in": [
+   0.00028,
+   0.00066,
+   -0.0005
+  ],
+  "mirror_gap_level": [
+   -0.00015,
+   -2e-05,
+   0.0005
+  ],
+  "coupled_growth": [
+   0.00021,
+   4e-05,
+   -0.0001
+  ],
+  "ts_ncur_in": [
+   -4e-05,
+   0.0,
+   0.00018
+  ],
+  "ts_drop_in": [
+   -0.00066,
+   0.0009,
+   -0.0002
+  ],
+  "ts_run_dn_in": [
+   0.00056,
+   -0.00029,
+   -0.00023
+  ],
+  "absorption_gap": [
+   0.00085,
+   -0.00123,
+   0.00042
+  ],
+  "ts_mom_gap3": [
+   0.00037,
+   0.0009,
+   -0.00126
+  ],
+  "rel_exp_base_in": [
+   -0.0003,
+   -0.00052,
+   0.00082
+  ],
+  "ts_miss12_in": [
+   -0.0004,
+   0.00055,
+   -0.00017
+  ],
+  "ts_vol_out": [
+   0.00058,
+   0.00011,
+   -0.00074
+  ],
+  "months_since_event": [
+   0.0,
+   0.0,
+   -5e-05
+  ],
+  "rel_pos_out": [
+   -0.00013,
+   -0.00021,
+   0.00029
+  ],
+  "rel_exp_base_out": [
+   0.00089,
+   0.0002,
+   -0.00129
+  ],
+  "rel_height_out": [
+   -0.00137,
+   0.00062,
+   0.00056
+  ],
+  "ts_ncur_out": [
+   -0.00028,
+   -0.00019,
+   0.00024
+  ],
+  "change_point_detected": [
+   5e-05,
+   -9e-05,
+   -0.00022
+  ],
+  "export_volatility": [
+   0.00129,
+   0.00011,
+   -0.00167
+  ],
+  "ts_dev12_in": [
+   -0.00028,
+   0.00038,
+   -0.00037
+  ],
+  "ts_dev6_in": [
+   -0.00035,
+   0.00079,
+   -0.00074
+  ],
+  "ts_slope6_out": [
+   8e-05,
+   -0.0015,
+   0.00099
+  ],
+  "rel_slope6_out": [
+   0.0003,
+   -0.00059,
+   -0.0002
+  ],
+  "ts_dev6_out": [
+   0.00067,
+   -0.00017,
+   -0.00108
+  ],
+  "similar_item_deviation": [
+   -0.00028,
+   -0.00042,
+   6e-05
+  ],
+  "rel_mom3_in": [
+   0.00042,
+   -0.00138,
+   0.0003
+  ],
+  "ts_amp_out": [
+   -0.00131,
+   0.00072,
+   -0.00016
+  ],
+  "ts_amp_in": [
+   -0.00058,
+   0.0015,
+   -0.00176
+  ],
+  "inflow_outflow_coupling": [
+   -0.00023,
+   -0.00125,
+   0.00063
+  ],
+  "reexport_share_trend": [
+   -0.00049,
+   0.00014,
+   -0.00054
+  ],
+  "rel_dev48_out": [
+   -0.00114,
+   0.00083,
+   -0.00059
+  ],
+  "ts_event_phase_h": [
+   0.00072,
+   -0.00216,
+   0.00054
+  ],
+  "ts_since_max_out": [
+   -0.00097,
+   -0.00156,
+   0.00161
+  ],
+  "rel_dev12_in": [
+   -0.00046,
+   -0.00104,
+   0.00059
+  ],
+  "ts_since_min_in": [
+   0.00111,
+   -0.00165,
+   -0.00039
+  ],
+  "rel_snaive_mean_out": [
+   -0.00038,
+   0.00046,
+   -0.00118
+  ],
+  "ts_ev_gain_out": [
+   0.0,
+   0.0,
+   -0.00111
+  ],
+  "rel_min_exp": [
+   -9e-05,
+   -0.00125,
+   0.00021
+  ],
+  "ts_dev48_in": [
+   -0.00095,
+   0.00014,
+   -0.00036
+  ],
+  "ts_mom12_out": [
+   0.00282,
+   -0.00193,
+   -0.00209
+  ],
+  "mirror_gap": [
+   -0.00096,
+   -0.00047,
+   5e-05
+  ],
+  "ts_snaive_n_in": [
+   -0.00053,
+   -0.00028,
+   -0.00065
+  ],
+  "mirror_gap_volatility": [
+   -0.00099,
+   -2e-05,
+   -0.00052
+  ],
+  "neighbor_deviation": [
+   9e-05,
+   -0.00135,
+   -0.00047
+  ],
+  "ts_snaive_mean_out": [
+   -0.00158,
+   -0.00154,
+   0.00136
+  ],
+  "ts_report_lag": [
+   -0.00048,
+   -0.00065,
+   -0.00105
+  ],
+  "ts_mom3_in": [
+   -0.00112,
+   -0.00105,
+   -0.00025
+  ],
+  "rel_pos_in": [
+   -0.00064,
+   -1e-05,
+   -0.00209
+  ],
+  "import_volatility": [
+   0.0006,
+   -0.00287,
+   -0.0005
+  ],
+  "ts_mom6_in": [
+   -0.00048,
+   -0.00108,
+   -0.00132
+  ],
+  "ts_slope_gap6": [
+   -0.0007,
+   -0.00081,
+   -0.00156
+  ],
+  "rel_mom3_out": [
+   -0.00045,
+   -0.00125,
+   -0.00168
+  ],
+  "ts_accel_in": [
+   5e-05,
+   -0.00233,
+   -0.0027
+  ]
+ }
+}

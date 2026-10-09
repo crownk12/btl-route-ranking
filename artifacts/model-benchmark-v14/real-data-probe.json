@@ -1,0 +1,65 @@
+{
+ "generated_at_utc": "2026-10-04T22:27:05.759250+00:00",
+ "slice": "target RUS; candidates ARM, IND, KAZ, KGZ, TUR, UZB; supplier CHN",
+ "label": "benchmark rule on the observed series",
+ "timing_assumption": "candidate statistics known through basis-3; supplier statistics through basis-1 (early) or basis-3 (same); assumed, not recorded",
+ "scoring": "walk-forward by year [2023, 2024, 2025]; XGBoost classifier depth 3, 200 trees, 5 seeds; queries with at least 4 candidates and both classes",
+ "regimes": {
+  "early": {
+   "rows": 4043,
+   "positive_rate": 0.31239178827603264,
+   "own_series": {
+    "rows_scored": 2052,
+    "queries_with_both_classes": 171,
+    "ndcg_at_3": 0.7425788416370698,
+    "pairs_ordered_correctly": 0.7681448992852501
+   },
+   "own_plus_supplier_nowcast": {
+    "rows_scored": 2052,
+    "queries_with_both_classes": 171,
+    "ndcg_at_3": 0.7450663774670715,
+    "pairs_ordered_correctly": 0.7639051332033787,
+    "ndcg_at_3_gain": 0.0024875358300017387,
+    "gain_standard_error": 0.010169506817603645
+   },
+   "own_plus_supplier_full": {
+    "rows_scored": 2052,
+    "queries_with_both_classes": 171,
+    "ndcg_at_3": 0.7061615305742481,
+    "pairs_ordered_correctly": 0.7408219623131903,
+    "ndcg_at_3_gain": -0.036417311062821624,
+    "gain_standard_error": 0.01583241694595353
+   }
+  },
+  "same": {
+   "rows": 4043,
+   "positive_rate": 0.31239178827603264,
+   "own_series": {
+    "rows_scored": 2052,
+    "queries_with_both_classes": 171,
+    "ndcg_at_3": 0.7425788416370698,
+    "pairs_ordered_correctly": 0.7681448992852501
+   },
+   "own_plus_supplier_full": {
+    "rows_scored": 2052,
+    "queries_with_both_classes": 171,
+    "ndcg_at_3": 0.7345331650870364,
+    "pairs_ordered_correctly": 0.761111111111111,
+    "ndcg_at_3_gain": -0.00804567655003349,
+    "gain_standard_error": 0.014409048477673474
+   }
+  }
+ },
+ "months": [
+  "2019-04",
+  "2026-06"
+ ],
+ "items": [
+  "845710",
+  "848210",
+  "851762",
+  "853710",
+  "854129",
+  "901580"
+ ]
+}

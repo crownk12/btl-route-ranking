@@ -1,0 +1,98 @@
+[
+  {
+    "id": "EU-833-2014",
+    "target": "RUS",
+    "title": "EU 대러시아 금융·이중용도·석유산업 관련 제한",
+    "announced": "2014-07-31",
+    "effective": "2014-08-01",
+    "published": "2014-07-31",
+    "authority": "Council of the European Union",
+    "url": "https://eur-lex.europa.eu/eli/reg/2014/833/oj/eng",
+    "summary": "군사용 또는 군사 최종사용자 관련 이중용도 품목과 특정 석유산업 기술 등에 제한을 도입한 원문 규정.",
+    "scope": "국가 수준 정책 맥락. HS6별 통제 여부는 기술 사양·최종사용자·원문 부속서의 별도 판단 필요."
+  },
+  {
+    "id": "US-EAR-RUS-2022",
+    "target": "RUS",
+    "title": "미국 EAR 대러시아 수출통제 확대",
+    "announced": "2022-02-24",
+    "effective": "2022-02-24",
+    "published": "2022-03-03",
+    "authority": "US Department of Commerce / BIS",
+    "url": "https://www.federalregister.gov/documents/2022/03/03/2022-04300/implementation-of-sanctions-against-russia-under-the-export-administration-regulations-ear",
+    "summary": "러시아 관련 EAR 허가 요건과 수출통제 확대. 이 레지스트리는 연방관보 공표일 이후에만 특징값에 반영한다.",
+    "scope": "국가 수준 정책 맥락. ECCN과 HS6를 동일한 분류로 취급하지 않음."
+  },
+  {
+    "id": "US-IRN-2018",
+    "target": "IRN",
+    "title": "미국 대이란 제재 재부과",
+    "announced": "2018-11-05",
+    "effective": "2018-11-05",
+    "published": "2018-11-05",
+    "authority": "US Department of the Treasury",
+    "url": "https://home.treasury.gov/news/press-releases/sm541",
+    "summary": "JCPOA와 관련해 해제·유예됐던 핵 관련 제재의 재부과와 금융·해운·에너지 부문 지정 조치.",
+    "scope": "금융·해운·에너지 관련 정책 맥락이며 모든 품목의 수출 금지를 의미하지 않음."
+  },
+  {
+    "id": "UN-2371-2017",
+    "target": "PRK",
+    "title": "유엔 안보리 결의 2371",
+    "announced": "2017-08-05",
+    "effective": "2017-08-05",
+    "published": "2017-08-05",
+    "authority": "UN Security Council",
+    "url": "https://main.un.org/securitycouncil/en/sanctions/1718/resolutions",
+    "summary": "북한의 석탄·철·철광석·납·납광석·수산물 수출 등에 대한 제한 확대.",
+    "scope": "북한 수출 제한과 관련된 국가 수준 맥락. 화면의 기계·전자 HS6 직접 지정 근거 아님."
+  },
+  {
+    "id": "UN-2375-2017",
+    "target": "PRK",
+    "title": "유엔 안보리 결의 2375",
+    "announced": "2017-09-11",
+    "effective": "2017-09-11",
+    "published": "2017-09-11",
+    "authority": "UN Security Council",
+    "url": "https://main.un.org/securitycouncil/en/sanctions/1718/resolutions",
+    "summary": "석유류 공급 제한, 북한 섬유 수출 금지, 합작사업 제한 등을 확대.",
+    "scope": "복수 조치의 결의 채택일. 개별 조치별 적용기간과 예외는 원문 확인 필요."
+  },
+  {
+    "id": "UN-2397-2017",
+    "target": "PRK",
+    "title": "유엔 안보리 결의 2397",
+    "announced": "2017-12-22",
+    "effective": "2017-12-22",
+    "published": "2017-12-22",
+    "authority": "UN Security Council",
+    "url": "https://main.un.org/securitycouncil/en/s/res/2397-(2017)",
+    "summary": "정제유 공급 한도 강화와 산업기계·운송수단·금속 등의 대북 공급 제한 확대. 정제유 연간 50만 배럴 한도는 2018년 1월부터 적용.",
+    "scope": "민간 여객기 유지용 부품 등 예외 존재. HS6별 자동 금지 판정에 사용하지 않음."
+  },
+  {
+    "id": "US-CHN-AC-2022",
+    "target": "CHN",
+    "title": "미국 BIS 대중국 첨단 컴퓨팅·반도체 수출통제 도입",
+    "announced": "2022-10-07",
+    "effective": "2022-10-21",
+    "published": "2022-10-07",
+    "authority": "US Department of Commerce / BIS",
+    "url": "https://www.bis.gov/node/20292",
+    "summary": "첨단 컴퓨팅 칩·슈퍼컴퓨터 최종용도 및 반도체 제조 관련 통제. 10월 7·12·21일 단계 시행 중 첨단 컴퓨팅 조치의 10월 21일을 이 사건의 기준일로 사용.",
+    "scope": "국가 수준 정책 맥락. 중국 전체 또는 화면의 HS6 품목 전체에 대한 금지 판정이 아니며, ECCN·기술 사양·최종사용자·예외는 원문별 확인 필요."
+  },
+  {
+    "id": "US-CHN-AC-2023",
+    "target": "CHN",
+    "title": "미국 BIS 첨단 컴퓨팅 통제 기준·우회 방지 요건 강화",
+    "announced": "2023-10-17",
+    "effective": "2023-11-16",
+    "published": "2023-10-17",
+    "authority": "US Department of Commerce / BIS",
+    "url": "https://www.bis.gov/press-release/commerce-strengthens-restrictions-advanced-computing-semiconductors-semiconductor-manufacturing-equipment",
+    "summary": "첨단 컴퓨팅 칩의 성능·성능 밀도 기준 및 우회 방지 요건을 보완한 AC/S 규칙. 이 기록은 2023년 발표 당시 조치를 반영하며 이후 개정 전체를 포괄하지 않음.",
+    "scope": "국가 수준 정책 맥락. 중국 전체 또는 화면의 HS6 품목 전체에 대한 금지 판정이 아니며, ECCN·기술 사양·최종사용자·예외는 원문별 확인 필요."
+  }
+]

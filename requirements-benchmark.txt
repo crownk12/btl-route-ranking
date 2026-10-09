@@ -1,0 +1,6 @@
+# Optional full research comparison; normal app uses requirements-lock.txt only.
+-r requirements-ml.txt
+lightgbm>=4,<5
+catboost>=1.2,<2
+# Hyperparameter search of benchmark v14 (ml/benchmark/exp_round5.py).
+optuna>=4,<6

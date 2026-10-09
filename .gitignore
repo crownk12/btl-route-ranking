@@ -1,0 +1,9 @@
+﻿.venv/
+.venv-bench/
+__pycache__/
+*.pyc
+.env
+data/*-cache/
+data/harness.sqlite
+harness/
+*.log
