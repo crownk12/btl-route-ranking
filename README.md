@@ -1,10 +1,10 @@
-﻿# Ranking third-country trade routes for export-control review
+# Ranking third-country trade routes for export-control review
 
 Companion repository for the manuscript
 *Before the list: ranking third-country trade routes for export-control review with a point-in-time panel and a leakage-controlled evaluation*
 (Yim & Lee, submitted to *Computational Economics*).
 
-This repository holds only the **ranking layer** of the BEFORE THE LIST project — the point-in-time panel generator, the features, the learners, the evaluation protocol and every record cited in the paper. The full application (evidence screens, LLM brief generation, defence-trade layer) lives at https://github.com/nobody10021/before_the_list and is the subject of separate work.
+This repository holds the **ranking layer** of the BEFORE THE LIST project — the point-in-time panel generator, the features, the learners, the evaluation protocol and every record cited in the paper. Other components of the tool (evidence screens, report drafting with a language model) are outside the scope of the paper and are not included here.
 
 ## What is here
 
@@ -62,4 +62,4 @@ Code: Apache License 2.0. Observed monthly declarations were obtained from UN Co
 
 ## Citation
 
-Yim, W., & Lee, Y. (2026). Before the list: ranking third-country trade routes for export-control review with a point-in-time panel and a leakage-controlled evaluation. Manuscript submitted for publication. Code and data: this repository (Zenodo DOI to be added).
+Yim, W., & Lee, Y. (2026). Before the list: ranking third-country trade routes for export-control review with a point-in-time panel and a leakage-controlled evaluation. Manuscript submitted for publication. Code and data: https://github.com/crownk12/btl-route-ranking, release 1.0 archived at https://doi.org/10.5281/zenodo.23272191.
