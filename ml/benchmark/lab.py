@@ -86,11 +86,11 @@ def stage_build(basis_step=1, name='dataset.npz', extended=False):
                                'test': 'grid basis >= 2022-01 and maturity <= panel end', 'inner_fit': 'train with maturity <= 2015-12',
                                'inner_holdout': 'train on the grid with basis >= 2016-01 (model, feature and hyperparameter search)'},
                 'features': len(features), 'splits': {}, 'extraction_seconds': round(time.time() - t0, 1)}
-    for name, mask in list(masks.items()) + [('inner_fit', inner['fit']), ('inner_holdout', inner['holdout'])]:
+    for split_name, mask in list(masks.items()) + [('inner_fit', inner['fit']), ('inner_holdout', inner['holdout'])]:
         g = d['G'][mask]; y = d['Y'][mask, 0]; b = d['B'][mask]
         queries, inverse = np.unique(g, return_inverse=True)
         with_positive = np.bincount(inverse, weights=y) > 0
-        manifest['splits'][name] = {'rows': int(mask.sum()), 'queries': int(len(queries)), 'queries_with_positive': int(with_positive.sum()), 'positives': int(y.sum()),
+        manifest['splits'][split_name] = {'rows': int(mask.sum()), 'queries': int(len(queries)), 'queries_with_positive': int(with_positive.sum()), 'positives': int(y.sum()),
                                     'positive_rate': round(float(y.mean()), 4), 'basis_range': [mt(int(b.min())), mt(int(b.max()))],
                                     'rows_by_target': {t: int((d['T'][mask] == t).sum()) for t in TARGETS},
                                     'rows_by_horizon': {str(h): int((d['H'][mask] == h).sum()) for h in HORIZONS},

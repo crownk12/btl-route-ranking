@@ -1,0 +1,38 @@
+{
+ "generated_at_utc": "2026-10-11T01:23:24.926630+00:00",
+ "replay_cells_equal_to_database": 1574370,
+ "metric": "ndcg_at_5_pos",
+ "learner": "XGBoost binary classifier, default settings, seed 42, grid training rows",
+ "features": 80,
+ "levels": {
+  "model": {
+   "fold_2009": 0.7763303182716486,
+   "fold_2012": 0.778640899359144,
+   "fold_2015": 0.7733822149536761,
+   "validation": 0.7493528078458105,
+   "inner_folds_mean": 0.7761178108614896
+  },
+  "state_known": {
+   "fold_2009": 0.7755919932795208,
+   "fold_2012": 0.780808539615205,
+   "fold_2015": 0.7812182517982912,
+   "validation": 0.7495421514674747,
+   "inner_folds_mean": 0.7792062615643389
+  },
+  "future_shape": {
+   "fold_2009": 0.7833016126432414,
+   "fold_2012": 0.784153822605343,
+   "fold_2015": 0.789775616614677,
+   "validation": 0.7663377532506703,
+   "inner_folds_mean": 0.7857436839544206
+  },
+  "true_ratio": {
+   "fold_2009": 0.9747635261874317,
+   "fold_2012": 0.9788751977221799,
+   "fold_2015": 0.9758154403965988,
+   "validation": 0.9732725423009607,
+   "inner_folds_mean": 0.9764847214354034
+  }
+ },
+ "note": "state_known and future_shape use generator internals; they are bounds, not models that can be deployed"
+}

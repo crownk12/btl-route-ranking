@@ -33,7 +33,8 @@ This repository holds the **ranking layer** of the BEFORE THE LIST project — t
 | Fig. 4 (oracle ceiling) | `artifacts/model-benchmark-v14/ceiling.json` |
 | Table 3 (task-definition sensitivity) | `artifacts/model-benchmark-v14/FINAL_REPORT.md` section 7 |
 | Export-surge task | `models/export-metrics.json`, `artifacts/model-benchmark-v14/export-evaluation.json` |
-| Table 4, Fig. 5 (real-data benchmark) | `artifacts/model-benchmark-v14/real-benchmark.json`, `real-data-probe.json` |
+| Table 4 (undamped panel build) | `artifacts/model-benchmark-v14/undamped/final-evaluation.json`, `undamped/ceiling.json` |
+| Table 5, Fig. 5 (real-data benchmark) | `artifacts/model-benchmark-v14/real-benchmark.json`, `real-data-probe.json` |
 
 `paper/figures/make_figures.py` regenerates Figs. 2–5 from these files.
 
@@ -41,7 +42,7 @@ This repository holds the **ranking layer** of the BEFORE THE LIST project — t
 
 Python 3.11. Serving needs only NumPy / scikit-learn; retraining and the benchmark need `requirements-benchmark.txt` (XGBoost, LightGBM, CatBoost, Optuna).
 
-`
+```
 python -m venv .venv-bench
 .venv-bench\Scripts\pip install -r requirements-benchmark.txt
 python ml\build_db.py                      # rebuilds data/test.db deterministically (fixed PANEL_END)
@@ -52,7 +53,9 @@ python -m benchmark.final all              # single test reading, walk-forward, 
 python -m benchmark.ceiling                # oracle diagnosis
 python -m benchmark.real_bench             # observed-data benchmark
 python -m benchmark.export_track           # secondary task
-`
+```
+
+Undamped build (Table 4 of the paper): run the same steps in a separate copy of the repository with the environment variable `BTL_UNDAMPED=1` set before `python ml\build_db.py`. This removes every generator cap in `ml/build_db.py` (`DEMO`) and sets the scale factors to one; `benchmark.final all` and `benchmark.ceiling` then produce the records stored in `artifacts/model-benchmark-v14/undamped/`. Do not run it in the main copy: it overwrites `data/test.db`.
 
 Unit tests: `python -m unittest discover -s tests -p "test_*.py"`.
 

@@ -8,6 +8,7 @@ missingness and mirror gaps are all calibrated, but several are damped by DEMO c
 demonstration curves stay smooth; the caps are recorded in the metadata table. Each cell
 carries its kind (anchored / calibrated). The review queue survives a rebuild.
 """
+import os
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -25,10 +26,19 @@ DATASET_VERSION = 'btl-test-3-calibrated'
 # BTL_PANEL_END=YYYY-MM builds a longer panel on purpose (then retrain and redeploy, docs/ML.md).
 PANEL_END = '2026-09'
 # Demo damping: observed monthly trade is far more jagged than a demonstration screen should be.
-DEMO = dict(resid_sd_cap=0.05, drift_cap=0.004, level_sd_cap=1.5, seasonal_amp_cap=0.35, event_amp_cap=1.0, event_damping=0.3,
-            mirror_sd_cap=0.4, missing_floor=0.02, missing_cap=0.2, pulse_amp_scale=0.5, pulse_amp_cap=0.8, pulse_duration_scale=3,
-            pulse_gap_scale=(2, 6), level_reference_month='2023-01', shared_shock_sd=0.025)
+DEMO = dict(resid_sd_cap=0.05, drift_cap=0.004, level_sd_cap=1.5, seasonal_amp_cap=0.35,
+            event_amp_cap=1.0, event_damping=0.3, mirror_sd_cap=0.4,
+            missing_floor=0.02, missing_cap=0.2,
+            pulse_amp_scale=0.5, pulse_amp_cap=0.8, pulse_duration_scale=3, pulse_gap_scale=(2, 6),
+            level_reference_month='2023-01', shared_shock_sd=0.025)
 
+if os.getenv('BTL_UNDAMPED') == '1':
+    _inf = float('inf')
+    DEMO = dict(resid_sd_cap=_inf, drift_cap=_inf, level_sd_cap=_inf, seasonal_amp_cap=_inf,
+                event_amp_cap=_inf, event_damping=1.0, mirror_sd_cap=_inf,
+                missing_floor=0.0, missing_cap=1.0,
+                pulse_amp_scale=1.0, pulse_amp_cap=_inf, pulse_duration_scale=1, pulse_gap_scale=(1, 2),
+                level_reference_month='2023-01', shared_shock_sd=0.025)
 
 def load_parameters():
     return json.loads(PARAMETERS.read_text(encoding='utf-8'))
