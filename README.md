@@ -65,4 +65,4 @@ Code: Apache License 2.0. Observed monthly declarations were obtained from UN Co
 
 ## Citation
 
-Yim, W., & Lee, Y. (2026). Before the list: ranking third-country trade routes for export-control review with a point-in-time panel and a leakage-controlled evaluation. Manuscript submitted for publication. Code and data: https://github.com/crownk12/btl-route-ranking, release 1.0 archived at https://doi.org/10.5281/zenodo.23272191.
+Yim, W., & Lee, Y. (2026). Before the list: ranking third-country trade routes for export-control review with a point-in-time panel and a leakage-controlled evaluation. Manuscript submitted for publication. Code and data: https://github.com/crownk12/btl-route-ranking; the version used in the paper (release 1.1) is archived at https://doi.org/10.5281/zenodo.23291805.
