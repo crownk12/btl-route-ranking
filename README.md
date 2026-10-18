@@ -2,7 +2,7 @@
 
 Companion repository for the manuscript
 *Ranking third-country trade routes for export-control review: a calibrated point-in-time panel and a leakage-controlled evaluation*
-(Yim & Lee, submitted to *Computational Economics*).
+(Yim, Lee & Kang, submitted to *Computational Economics*).
 
 This repository holds the **ranking layer** of the BEFORE THE LIST project — the point-in-time panel generator, the features, the learners, the evaluation protocol and every record cited in the paper. Other components of the tool (evidence screens, report drafting with a language model) are outside the scope of the paper and are not included here.
 
@@ -20,7 +20,7 @@ This repository holds the **ranking layer** of the BEFORE THE LIST project — t
 | `ml/benchmark/export_track.py` | Secondary export-surge task |
 | `models/` | Deployed model packs and their metrics (`metrics.json`, `export-metrics.json`); previous pack in `archive/` |
 | `artifacts/model-benchmark-v14/` | Every number in the paper: `final-evaluation.json`, `split-manifest.json`, `ceiling.json`, `real-benchmark.json`, `experiments.jsonl`, `FINAL_REPORT.md` |
-| `data/` | Generator parameters, policy events, observed declarations used for calibration and for the real-data benchmark |
+| `data/` | Generator parameters (`panel-parameters.json`), policy events (`events.json`) and the generated panel (`test.db`). The observed UN Comtrade declarations are **not** included; see *Observed data* below |
 | `tests/` | Includes the leakage test: deleting rows published after the basis month must leave the feature block identical |
 
 ## Where each table and figure comes from
@@ -59,10 +59,22 @@ Undamped build (Table 4 of the paper): run the same steps in a separate copy of 
 
 Unit tests: `python -m unittest discover -s tests -p "test_*.py"`.
 
-## Data sources and licence
+## Observed data (UN Comtrade) — not redistributed
 
-Code: Apache License 2.0. Observed monthly declarations were obtained from UN Comtrade (https://comtradeplus.un.org/) and remain subject to its terms of use; the collection script is `scripts/collect_observed_exports.py`. The generated panel is a calibrated simulation and is not a record of trade.
+The observed monthly declarations used for calibration (`data/integration.sqlite`, 12,845 rows) and for the real-data benchmark (`data/observed-exports.json`, `data/observed-imports.json`, `data/observed-wider.json`) were obtained from UN Comtrade (https://comtradeplus.un.org/). UN Comtrade's policy on use and re-dissemination provides the data for internal use and does not permit redistribution of the rows without UNSD's permission, so these four files are not part of this repository or of the Zenodo archive.
+
+What this means for reproduction:
+
+- **Everything in Sections 3–6 of the paper reproduces without them.** `ml/build_db.py` reads only `data/panel-parameters.json` (the estimated generator parameters, which are derived quantities, not declarations) and rebuilds the same 524,790-row panel; the benchmark, the oracle bound and the undamped build then run as described above.
+- **The real-data benchmark (Section 7) needs the observed rows.** `scripts/collect_observed_exports.py` contains the exact reporter, partner, item and period lists and rebuilds the four files from the UN Comtrade API with a free account (`python scripts\collect_observed_exports.py`, then `--imports`, then `--wider --imports`; see the script header). UN Comtrade revises past months, so a later collection may differ slightly from the rows used in the paper (collected 2026-09 to 2026-10); `data/panel-parameters.json` records the SHA-256 of the calibration table used.
+- `scripts/estimate_panel_parameters.py` re-estimates `panel-parameters.json` from a freshly collected `integration.sqlite` for anyone who wants to check the calibration step itself.
+
+Researchers who need the exact rows used in the paper for replication may contact the corresponding author; they will be shared where UN Comtrade's terms allow.
+
+## Licence
+
+Code: Apache License 2.0. The generated panel is a calibrated simulation and is not a record of trade.
 
 ## Citation
 
-Yim, W., & Lee, Y. (2026). Ranking third-country trade routes for export-control review: a calibrated point-in-time panel and a leakage-controlled evaluation. Manuscript submitted for publication. Code and data: https://github.com/crownk12/btl-route-ranking; the version used in the paper (release 1.1) is archived at https://doi.org/10.5281/zenodo.23291805.
+Yim, W., Lee, Y., & Kang, S. (2026). Ranking third-country trade routes for export-control review: a calibrated point-in-time panel and a leakage-controlled evaluation. Manuscript submitted for publication. Code and data: https://github.com/crownk12/btl-route-ranking; the version used in the paper (release 1.1) is archived at https://doi.org/10.5281/zenodo.23291805.

@@ -7,3 +7,5 @@ data/*-cache/
 data/harness.sqlite
 harness/
 *.log
+data/integration.sqlite
+data/observed-*.json
