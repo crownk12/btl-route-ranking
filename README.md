@@ -77,4 +77,4 @@ Code: Apache License 2.0. The generated panel is a calibrated simulation and is 
 
 ## Citation
 
-Yim, W., Lee, Y., & Kang, S. (2026). Ranking third-country trade routes for export-control review: a calibrated point-in-time panel and a leakage-controlled evaluation. Manuscript submitted for publication. Code and data: https://github.com/crownk12/btl-route-ranking; the version used in the paper (release 1.1) is archived at https://doi.org/10.5281/zenodo.23291805.
+Yim, W., Lee, Y., & Kang, S. (2026). Ranking third-country trade routes for export-control review: a calibrated point-in-time panel and a leakage-controlled evaluation. Manuscript submitted for publication. Code and data: https://github.com/crownk12/btl-route-ranking; the version used in the paper (release 1.2) is archived at https://doi.org/10.5281/zenodo.23446142.
